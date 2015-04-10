@@ -5,10 +5,10 @@ class Newsletter {
     Date dateCreated
     Date dateSent
 
-    static hasMany = [newsitems : NewsItem]
+    static hasMany = [newsitems : NewsItem, subscribers : Subscriber]
 
     static constraints = {
-        
+        dateSent(nullable: true)
     }
 
     String toString(){

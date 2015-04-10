@@ -29,7 +29,7 @@
 						<g:sortableColumn property="dateSent" title="${message(code: 'newsletter.dateSent.label', default: 'Date Sent')}" />
 					
 						<g:sortableColumn property="title" title="${message(code: 'newsletter.title.label', default: 'Title')}" />
-					
+
 					</tr>
 				</thead>
 				<tbody>
@@ -37,11 +37,14 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${newsletterInstance.id}">${fieldValue(bean: newsletterInstance, field: "dateCreated")}</g:link></td>
-					
-						<td><g:formatDate date="${newsletterInstance.dateSent}" /></td>
-					
+
+						<g:if test="${newsletterInstance.dateSent==null}">
+							<td><g:link action="send" id="${newsletterInstance.id}">Send</g:link></td>
+						</g:if>
+						<g:else>
+							<td><g:formatDate date="${newsletterInstance.dateSent}" /></td>
+						</g:else>
 						<td>${fieldValue(bean: newsletterInstance, field: "title")}</td>
-					
 					</tr>
 				</g:each>
 				</tbody>

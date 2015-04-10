@@ -1,0 +1,22 @@
+##Instruction##
+
+- Click on grailsnewsletter.NewsletterController
+    - click "new Newsletter"
+    - enter title
+    - click "create"
+    - click "edit"
+    - click "add news item"
+    - enter fields
+    - click "create"
+    - click "home"
+- Click on grailsnewsletter.SubscriberController
+    - click "new Subscriber"
+    - enter name
+    - enter mail
+    - (optional) enter unsubscribe (will unsubscribe subscriber, i.e. no mails)
+    - click create
+    - click home
+- Click on grailsnewsletter.NewsletterController
+    - click "send"
+- Check mail
+- Click link in unsubscribe here
